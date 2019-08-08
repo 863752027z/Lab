@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": 
+    [
+        {
+            "label": "build hello world",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${fileBasename}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+
+            "presentation": {
+                "echo": true,
+                "reveal": "always", // 在“终端”中显示编译信息的策略，可以为always，silent，never。具体参见VSC的文档
+                "focus": false, // 设为true后可以使执行task时焦点聚集在终端，但对编译c和c++来说，设为true没有意义
+                "panel": "shared" // 不同的文件的编译信息共享一个终端面板
+            }
+        }
+    ]
+
+}

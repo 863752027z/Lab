@@ -72,20 +72,16 @@ def AffineTransform(dst_img, img, src_point, dst_point):
     dst = cv2.warpAffine(img, M, (cols, rows))
     return dst
 
-def viz_flow(flow):
-    # 色调H：用角度度量，取值范围为0°～360°，从红色开始按逆时针方向计算，红色为0°，绿色为120°,蓝色为240°
-    # 饱和度S：取值范围为0.0～1.0
-    # 亮度V：取值范围为0.0(黑色)～1.0(白色)
-    h, w = flow.shape[:2]
-    hsv = np.zeros((h, w, 3), np.uint8)
-    mag, ang = cv2.cartToPolar(flow[...,0], flow[...,1])
-    hsv[...,0] = ang*180/np.pi/2
-    hsv[...,1] = cv2.normalize(mag,None,0,255,cv2.NORM_MINMAX)
-    # flownet是将V赋值为255, 此函数遵循flownet，饱和度S代表像素位移的大小，亮度都为最大，便于观看
-    # 也有的光流可视化讲s赋值为255，亮度代表像素位移的大小，整个图片会很暗，很少这样用
-    hsv[...,2] = 255
-    bgr = cv2.cvtColor(hsv,cv2.COLOR_HSV2BGR)
-    return bgr
+def get_file_number(path):
+    file_num = 0
+    dir_num = 0
+    for lists in os.listdir(path):
+        sub_path = os.path.join(path, lists)
+        if os.path.isfile(sub_path):
+            file_num += 1
+        if os.path.isdir(sub_path):
+            dir_num += 1
+    return file_num, dir_num
 
 def get_path(remain_dir):
     path1 = 'E:/CAS(ME)^2/rawvideo/' + remain_dir + '/'
@@ -108,22 +104,7 @@ def get_path(remain_dir):
         count+=1
     return path_list1, path_list2
 
-def getFeaturePoint_M(face_key_point, feature_point, one):
-        M1 = np.empty([0,3], dtype=np.float32)
-        for i in range(len(feature_point)):
-            index = feature_point[i]
-            temp_point = np.empty([1,3], np.float32)
-            temp_point[0][0] = face_key_point[index][0][0]
-            temp_point[0][1] = face_key_point[index][0][1]
-            temp_point[0][2] = 1
-            M1 = np.concatenate([M1, temp_point])
-        M0 = M1[:, 0:2]
-        M0 = np.transpose(M0)
-        M1 = np.transpose(M1)
-        if one:
-            return M1
-        else:
-            return M0
+
 
 def extractROI_chg(area,list, image):
     mask = np.zeros(image.shape, dtype=np.uint8)
@@ -245,72 +226,6 @@ def set_area(face_key_point):
     area = {1:left_brow, 2:right_brow, 3:nose, 4:mouth, 5:left_brow1, 6:right_brow1, 7:left_eye_below, 8:right_eye_below}
     return area
 
-def solve(path1):
-    cap = cv2.VideoCapture(path1)
-    total_frame = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    frame = []
-    #先用13个点
-    feature_point = [1, 2, 3, 4, 5, 6, 12, 13, 14, 15, 16, 17, 29]
-    first_frame = None
-    #p0就是第一张图片的特征点
-    p0 = None
-    feature_point_M_one = None
-    #下面是ROI的变量
-    ROI = []
-    area = None
-    list = [6]
-    for i in range(total_frame):
-        ret,temp_frame = cap.read()
-        #保存刚读进来的一帧
-        original_frame = temp_frame
-        count = i+1
-        temp_frame = face_cut(temp_frame)
-        face_key_point = face_detector(temp_frame)
-        while face_key_point.shape[0] != 68:
-            temp_frame = face_cut(original_frame)
-            face_key_point = face_detector(temp_frame)
-        #处理第一帧的数据
-        if count == 1:
-            first_frame = temp_frame
-            p0 = face_key_point
-            feature_point_M_one = getFeaturePoint_M(p0, feature_point, None)
-            print('处理' + str(count) + '.jpg')
-            frame.append(first_frame)
-
-            area = set_area(p0)
-            temp_ROI = extractROI_chg(area, list, first_frame)
-            ROI.append(temp_ROI)
-        else:
-            #第二帧开始就要进行仿射变换矩阵的计算
-            #左边1 3 5或者2 4 6，右边17 15 13或者16 14 12
-            #鼻子29
-            p1 = face_key_point
-            min = 1000000
-            minM = None
-            feature_point_M_i = getFeaturePoint_M(p1, feature_point, True)
-            for p in itertools.combinations(feature_point, 3):
-                a = p[0]
-                b = p[1]
-                c = p[2]
-                dst_point = np.float32([p0[a, 0], p0[b, 0], p0[c, 0]])
-                src_point = np.float32([p1[a, 0], p1[b, 0], p1[c, 0]])
-                temp_AffineM = cv2.getAffineTransform(src_point, dst_point)
-                #计算2范数
-                result = np.dot(temp_AffineM, feature_point_M_i)
-                temp_M = result - feature_point_M_one
-                norm2 = np.linalg.norm(temp_M, ord=2)
-                if norm2 < min:
-                    min = norm2
-                    minM = temp_AffineM
-            #算完所有的仿射变换矩阵，找到2范数最小的
-            rows, cols, ch = first_frame.shape
-            dst_img = cv2.warpAffine(temp_frame, minM, (cols, rows))
-            print('处理' + str(count) + '.jpg')
-            frame.append(dst_img)
-            temp_ROI = extractROI_chg(area, list, dst_img)
-            ROI.append(temp_ROI)
-    return p0, frame, ROI
-
 def save_data_to_excel(data, path):
     data_df = pd.DataFrame(data)
     writer = pd.ExcelWriter(path)
@@ -319,7 +234,9 @@ def save_data_to_excel(data, path):
 
 def read_img(path):
     ROI = []
-    for i in range(1075):
+    file_num, dir_num = get_file_number(path)
+    file_num = file_num-1
+    for i in range(file_num):
         filename = path + '/' + str(i+1) + '.jpg'
         temp_img = cv2.imread(filename)
         ROI.append(temp_img)
@@ -447,26 +364,29 @@ def isPoiWithinPoly(poi,poly):
             if isRayIntersectsSegment(poi,s_poi,e_poi):
                 sinsc+=1 #有交点就加1
 
-path = 'E:ZLW_ROI/6/s15/15_0102eatingworms'
-mod, angle, good_new = mainProcess(path)
-st = []
-mod_sub = np.empty([0, mod.shape[1]-1], dtype=np.float32)
-for i in range(mod.shape[0]):
-    temp_sub = []
-    for j in range(mod.shape[1]-1):
-        sub = mod[i][j+1] - mod[i][j]
-        temp_sub.append(sub)
-    temp_sub = np.array([temp_sub])
-    mod_sub = np.concatenate([mod_sub, temp_sub])
-save_data_to_excel(mod_sub, 'E:/' + 'mod_sub' + '15_0102eatingworms' + '_6' + '.xlsx')
 
 
-"""
-img = cv2.imread('E:/face_point.jpg')
-face_key_point = face_detector(img)
-area = set_area(face_key_point)
-list = [5, 6]
-masked_image = extractROI_chg(area, list, img)
-nonzero = np.array(masked_image.nonzero())
-print(nonzero)
-"""
+area_list = [1, 2, 3, 4, 5, 6, 7, 8]
+remain_dir = ['s15']
+base_path = 'E:ZLW_data/'
+for m in range(len(area_list)):
+    for n in range(len(remain_dir)):
+        path1 = base_path + str(area_list[m]) + '/' + remain_dir[n]
+        for lists in os.listdir(path1):
+            path2 = path1 + '/' + lists
+            mod, angle, good_new = mainProcess(path2)
+            mod_sub = np.empty([0, mod.shape[1]-1], dtype=np.float32)
+            for i in range(mod.shape[0]):
+                temp_sub = []
+                for j in range(mod.shape[1]-1):
+                    sub = mod[i][j+1] - mod[i][j]
+                    temp_sub.append(sub)
+                temp_sub = np.array([temp_sub])
+                mod_sub = np.concatenate([mod_sub, temp_sub])
+            save_path = base_path + 'mod_sub/'
+            save_data_to_excel(mod_sub, save_path + str(area_list[m]) + '_' + remain_dir[n] + '_' + lists + '.xlsx')
+            path2 = None
+        path1 = None
+
+
+

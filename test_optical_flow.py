@@ -20,12 +20,12 @@ def draw_point(P, img):
 
 frame = []
 frame_point = []
-base_path = 'E:/optical_flow/'
-for i in range(14):
-    path = base_path + str(i+136) + '.jpg'
+base_path = 'D:/simile/'
+for i in range(12):
+    path = base_path + str(i+1) + '.jpg'
     img = cv2.imread(path)
-    img = img[240:,250:]
     frame.append(img)
+
 img = frame[0]
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 feature_params = dict(maxCorners=100,
@@ -34,6 +34,7 @@ feature_params = dict(maxCorners=100,
 p0 = cv2.goodFeaturesToTrack(gray, mask=None, **feature_params)
 point = [p0[2]]
 
+exit(0)
 mod = None
 angle = []
 count = 0
