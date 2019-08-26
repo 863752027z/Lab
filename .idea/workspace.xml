@@ -2,44 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5d6a88c-1bbd-45e8-a7f7-426faa784558" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ROI模相减区域5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ROI的模相减1.0.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ROI的模相减2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Sales_item.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/algorithm.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run_other_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tempCodeRunnerFile.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test2.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_str.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vector.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/作用域.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/作用域.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/多边形碰撞检测.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/多边形碰撞检测.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/常量引用.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/成员函数.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/执行另一个python文件.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/毕业.zip.baiduyun.downloading.cfg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/理想图片的光流.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/生成ROI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/画线.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/读取gif图片.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ZLW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ZLW.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/convert_video2img.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flow_cut_eye.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labels.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mouth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_simile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data+read0.1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_read.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_read0.2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_solve.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_solve0.1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_solve0.2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/new_data_solve0.3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.ravel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/字符串处理.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/彩色直方图高斯混合.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/计算彩色直方图的个数.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/计算彩色直方图的个数封装.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROI的模相减.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROI的模相减.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_optical_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_optical_flow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROI的模相减1.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROI的模相减1.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/高斯混合模型0.1.py" beforeDir="false" afterPath="$PROJECT_DIR$/高斯混合模型0.1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,8 +72,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.理想图片的光流">
-    <configuration name="理想图片的光流" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.test.ravel">
+    <configuration name="计算彩色直方图的个数" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZLW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,7 +85,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/理想图片的光流.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/计算彩色直方图的个数.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="生成ROI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="高斯混合模型0.1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZLW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -122,28 +106,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/生成ROI.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ROI的模相减1.0" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZLW" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ROI的模相减1.0.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/高斯混合模型0.1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="提取不规则ROI封装" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="计算彩色直方图的个数封装" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZLW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/提取不规则ROI封装.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/计算彩色直方图的个数封装.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="光流计算封装" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="彩色直方图高斯混合" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZLW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -206,7 +169,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/光流计算封装.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/彩色直方图高斯混合.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,7 +199,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="读取gif图片" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test.ravel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ZLW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -248,49 +211,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/读取gif图片.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="执行另一个python文件" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZLW" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/执行另一个python文件.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run_other_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="ZLW" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_other_file.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.ravel.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -301,11 +222,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.理想图片的光流" />
-        <item itemvalue="Python.读取gif图片" />
-        <item itemvalue="Python.ROI的模相减1.0" />
-        <item itemvalue="Python.执行另一个python文件" />
-        <item itemvalue="Python.run_other_file" />
+        <item itemvalue="Python.高斯混合模型0.1" />
+        <item itemvalue="Python.test.ravel" />
+        <item itemvalue="Python.计算彩色直方图的个数" />
       </list>
     </recent_temporary>
   </component>

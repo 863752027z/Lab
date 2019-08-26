@@ -365,7 +365,6 @@ def isPoiWithinPoly(poi,poly):
                 sinsc+=1 #有交点就加1
 
 
-
 area_list = [1, 2, 3, 4, 5, 6, 7, 8]
 remain_dir = ['s15']
 base_path = 'E:ZLW_data/'
